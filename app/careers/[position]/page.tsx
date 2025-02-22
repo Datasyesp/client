@@ -2,7 +2,17 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import Link from "next/link"
 
-const jobData: { [key: string]: any } = {
+interface Job {
+  title: string;
+  company: string;
+  location: string;
+  experience: string;
+  description: string;
+  requirements: string[];
+  responsibilities: string[];
+}
+
+const jobData: Record<string, Job> = {
   "java-developer": {
     title: "Java Developer",
     company: "Cognizant (CTS)",
@@ -43,11 +53,10 @@ const jobData: { [key: string]: any } = {
       "Ensure high availability and disaster recovery",
     ],
   },
-  // Add more positions as needed
 }
 
 export default function CareerPage({ params }: { params: { position: string } }) {
-  const job = jobData[params.position] || {
+  const job: Job = jobData[params.position] || {
     title: "Position Details",
     company: "Company",
     location: "Location",
@@ -90,7 +99,7 @@ export default function CareerPage({ params }: { params: { position: string } })
               </CardHeader>
               <CardContent>
                 <ul className="list-disc list-inside space-y-2">
-                  {job.requirements.map((req: string) => (
+                  {job.requirements.map((req) => (
                     <li key={req} className="text-gray-600">
                       {req}
                     </li>
@@ -105,7 +114,7 @@ export default function CareerPage({ params }: { params: { position: string } })
               </CardHeader>
               <CardContent>
                 <ul className="list-disc list-inside space-y-2">
-                  {job.responsibilities.map((resp: string) => (
+                  {job.responsibilities.map((resp) => (
                     <li key={resp} className="text-gray-600">
                       {resp}
                     </li>
@@ -132,4 +141,3 @@ export default function CareerPage({ params }: { params: { position: string } })
     </div>
   )
 }
-
