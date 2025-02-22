@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 38 35% 15%;
+    --muted: 36 20% 96%;
+    --muted-foreground: 36 15% 40%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 38 35% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 38 35% 15%;
+    --border: 36 30% 92%;
+    --input: 36 30% 92%;
+    --primary: 36 40% 45%;
+    --primary-foreground: 36 40% 98%;
+    --secondary: 36 20% 92%;
+    --secondary-foreground: 36 40% 45%;
+    --accent: 36 40% 94%;
+    --accent-foreground: 36 40% 45%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 36 40% 98%;
+    --ring: 36 40% 45%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 38 35% 15%;
+    --foreground: 36 40% 98%;
+    --muted: 36 20% 20%;
+    --muted-foreground: 36 20% 65%;
+    --popover: 38 35% 15%;
+    --popover-foreground: 36 40% 98%;
+    --card: 38 35% 15%;
+    --card-foreground: 36 40% 98%;
+    --border: 36 20% 20%;
+    --input: 36 20% 20%;
+    --primary: 36 40% 70%;
+    --primary-foreground: 38 35% 15%;
+    --secondary: 36 20% 20%;
+    --secondary-foreground: 36 40% 98%;
+    --accent: 36 20% 20%;
+    --accent-foreground: 36 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 36 40% 98%;
+    --ring: 36 40% 70%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground min-h-screen w-full;
+  }
+}
+
+/* Golden gradient class for warm gold background */
+.golden-gradient {
+  @apply bg-gradient-to-r from-[#c6a355] via-[#e9d5a1] to-[#c6a355];
+}
+
+.container {
+  @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full;
+}
