@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { GraduationCap, BookOpen, Users, Globe } from "lucide-react"
 import Link from "next/link"
+import { PageProps } from "next"
 
 interface Job {
   title: string;
@@ -33,29 +35,9 @@ const jobData: Record<string, Job> = {
       "Collaborate with cross-functional teams",
     ],
   },
-  "aws-specialist": {
-    title: "AWS Specialist",
-    company: "Tech Mahindra",
-    location: "Bangalore",
-    experience: "4+ years",
-    description:
-      "Seeking an experienced AWS Specialist to help design and implement cloud solutions for our enterprise clients.",
-    requirements: [
-      "4+ years of experience with AWS services",
-      "AWS certifications preferred",
-      "Experience with infrastructure as code",
-      "Knowledge of security best practices",
-    ],
-    responsibilities: [
-      "Design and implement AWS solutions",
-      "Optimize cloud infrastructure",
-      "Provide technical leadership",
-      "Ensure high availability and disaster recovery",
-    ],
-  },
 }
 
-export default function CareerPage({ params }: { params: { position: string } }) {
+export default function CareerPage({ params }: PageProps<{ position: string }>) {
   const job: Job = jobData[params.position] || {
     title: "Position Details",
     company: "Company",
@@ -88,51 +70,6 @@ export default function CareerPage({ params }: { params: { position: string } })
                   <strong>Experience:</strong> {job.experience}
                 </p>
                 <p className="text-gray-600">{job.description}</p>
-              </div>
-            </CardContent>
-          </Card>
-
-          <div className="grid gap-6 md:grid-cols-2">
-            <Card>
-              <CardHeader>
-                <CardTitle>Requirements</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="list-disc list-inside space-y-2">
-                  {job.requirements.map((req) => (
-                    <li key={req} className="text-gray-600">
-                      {req}
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>Responsibilities</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="list-disc list-inside space-y-2">
-                  {job.responsibilities.map((resp) => (
-                    <li key={resp} className="text-gray-600">
-                      {resp}
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
-          </div>
-
-          <Card className="mt-8">
-            <CardContent className="pt-6">
-              <div className="flex gap-4">
-                <Button asChild>
-                  <Link href="/contact">Apply Now</Link>
-                </Button>
-                <Button variant="outline" asChild>
-                  <Link href="/colleges">Back to Careers</Link>
-                </Button>
               </div>
             </CardContent>
           </Card>
