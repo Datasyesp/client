@@ -88,23 +88,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <section id="contact" className="w-full py-12 md:py-24 lg:py-32 bg-gray-50">
-        <div className="container px-4 md:px-6">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tighter mb-4">Contact Us</h2>
-            <p className="text-gray-500 mb-8">Get in touch with our expert counselors today</p>
-            <form className="space-y-4">
-              <input className="w-full p-3 border rounded-md" placeholder="Your Name" type="text" required />
-              <input className="w-full p-3 border rounded-md" placeholder="Email Address" type="email" required />
-              <textarea className="w-full p-3 border rounded-md" placeholder="Your Message" rows={4} required />
-              <Button className="w-full" type="submit">
-                Send Message
-              </Button>
-            </form>
-          </div>
-        </div>
-      </section>
     </>
   )
 }
