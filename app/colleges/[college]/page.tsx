@@ -1,4 +1,5 @@
 import { NextPage } from "next"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 interface CollegePageProps {
   params: { college: string }
