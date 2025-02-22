@@ -80,96 +80,11 @@ export default function Home() {
                     As an educational service provider, we offer numerous services for students and the institutes we
                     work with. We strive to find the best feasible fit for our students while also taking into
                     consideration their personal objectives and career goals. Our dedicated team of experienced
-                    counsellors partners with students throughout their journey.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="relative overflow-hidden">
-                <CardContent className="p-6 space-y-4">
-                  <div className="p-2 bg-primary/10 w-fit rounded-lg">
-                    <BookOpen className="w-8 h-8 text-primary" />
-                  </div>
-                  <h3 className="text-2xl font-bold">Our Impact</h3>
-                  <p className="text-gray-500">
-                    Providing admissions guidance is about more than just helping students enroll into their preferred
-                    college. It is about helping candidates lay the foundational stones for the life they desire to lead
-                    in the future. The appropriate education in a student's career can enable them to improve their
-                    standards of living and make life-altering contributions to society.
+                    counselors partners with students throughout their journey.
                   </p>
                 </CardContent>
               </Card>
             </div>
-
-            <Card className="relative overflow-hidden">
-              <CardContent className="p-6 space-y-4">
-                <div className="grid gap-4 md:grid-cols-2 items-center">
-                  <div className="space-y-4">
-                    <h3 className="text-2xl font-bold">Our Expertise</h3>
-                    <p className="text-gray-500">
-                      We specialize in guiding students through their academic journeys in various fields, including
-                      Medicine, Dentistry, Engineering, Computer Science, Nursing, Pharmacy, Law, Management and more.
-                      Our team's extensive knowledge of the Education sector, combined with a robust network of industry
-                      contacts, has enabled us to assist countless students in achieving their academic ambitions.
-                    </p>
-                  </div>
-                  <div className="grid grid-cols-2 gap-4 text-center">
-                    <div className="p-4 bg-primary/5 rounded-lg">
-                      <h4 className="font-bold text-lg text-primary">10+</h4>
-                      <p className="text-sm text-gray-500">Years Experience</p>
-                    </div>
-                    <div className="p-4 bg-primary/5 rounded-lg">
-                      <h4 className="font-bold text-lg text-primary">1000+</h4>
-                      <p className="text-sm text-gray-500">Students Guided</p>
-                    </div>
-                    <div className="p-4 bg-primary/5 rounded-lg">
-                      <h4 className="font-bold text-lg text-primary">50+</h4>
-                      <p className="text-sm text-gray-500">Partner Institutions</p>
-                    </div>
-                    <div className="p-4 bg-primary/5 rounded-lg">
-                      <h4 className="font-bold text-lg text-primary">95%</h4>
-                      <p className="text-sm text-gray-500">Success Rate</p>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      <section className="w-full py-12 md:py-24 lg:py-32">
-        <div className="container px-4 md:px-6">
-          <h2 className="text-3xl font-bold tracking-tighter text-center mb-12">Our Services</h2>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            <Card>
-              <CardContent className="p-6">
-                <GraduationCap className="w-12 h-12 mb-4 text-primary" />
-                <h3 className="font-bold mb-2">Admission Guidance</h3>
-                <p className="text-sm text-gray-500">Expert guidance for admissions in India and abroad</p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardContent className="p-6">
-                <BookOpen className="w-12 h-12 mb-4 text-primary" />
-                <h3 className="font-bold mb-2">Career Counseling</h3>
-                <p className="text-sm text-gray-500">Personalized career path and course selection support</p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardContent className="p-6">
-                <Users className="w-12 h-12 mb-4 text-primary" />
-                <h3 className="font-bold mb-2">NRI Assistance</h3>
-                <p className="text-sm text-gray-500">Specialized support for NRI and international students</p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardContent className="p-6">
-                <Globe className="w-12 h-12 mb-4 text-primary" />
-                <h3 className="font-bold mb-2">Global Education</h3>
-                <p className="text-sm text-gray-500">Access to prestigious institutions worldwide</p>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </section>
@@ -193,4 +108,3 @@ export default function Home() {
     </>
   )
 }
-
