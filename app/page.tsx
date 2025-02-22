@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { GraduationCap, BookOpen, Users, Globe } from "lucide-react"
+import { GraduationCap, Users, Globe } from "lucide-react"
 import Link from "next/link"
 
 export default function Home() {
