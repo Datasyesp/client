@@ -1,34 +1,15 @@
+import { NextPage } from "next"
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-
-
-interface College {
-  name: string;
-  location: string;
-  description: string;
-  courses: string[];
-  facilities: string[];
-  admissionProcess: string[];
+interface CollegePageProps {
+  params: { college: string }
 }
 
-const collegeData: Record<string, College> = {
-  "amrita-university": {
-    name: "Amrita University",
-    location: "Coimbatore",
-    description:
-      "Amrita University is a multi-campus, multi-disciplinary research university that is ranked among the best in India.",
-    courses: ["B.Tech", "M.Tech", "MBA", "Medical Sciences"],
-    facilities: ["World-class Labs", "Research Centers", "Sports Complex", "Digital Library"],
-    admissionProcess: ["Online Application", "Entrance Exam", "Interview", "Merit-based Selection"],
-  },
-}
-
-export default function CollegePage({ params }: { params: { college: string } }) {
-  if (!params || !params.college) {
+const CollegePage: NextPage<CollegePageProps> = ({ params }) => {
+  if (!params?.college) {
     return <div className="text-center py-12">Invalid College Selection</div>
   }
 
-  const college: College = collegeData[params.college] || {
+  const college = collegeData[params.college] || {
     name: "College Details",
     location: "Location",
     description: "Details coming soon.",
@@ -57,3 +38,5 @@ export default function CollegePage({ params }: { params: { college: string } })
     </div>
   )
 }
+
+export default CollegePage
