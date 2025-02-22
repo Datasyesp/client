@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { GraduationCap, BookOpen, Users, Globe } from "lucide-react"
 import Link from "next/link"
 
 interface College {
@@ -24,6 +25,10 @@ const collegeData: Record<string, College> = {
 }
 
 export default function CollegePage({ params }: { params: { college: string } }) {
+  if (!params || !params.college) {
+    return <div className="text-center py-12">Invalid College Selection</div>
+  }
+
   const college: College = collegeData[params.college] || {
     name: "College Details",
     location: "Location",
@@ -46,62 +51,6 @@ export default function CollegePage({ params }: { params: { college: string } })
             <CardContent>
               <p className="text-gray-600">{college.description}</p>
               <p className="mt-4 text-gray-600">Location: {college.location}</p>
-            </CardContent>
-          </Card>
-
-          <div className="grid gap-6 md:grid-cols-2">
-            <Card>
-              <CardHeader>
-                <CardTitle>Available Courses</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="list-disc list-inside space-y-2">
-                  {college.courses.map((course) => (
-                    <li key={course} className="text-gray-600">
-                      {course}
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>Facilities</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="list-disc list-inside space-y-2">
-                  {college.facilities.map((facility) => (
-                    <li key={facility} className="text-gray-600">
-                      {facility}
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
-          </div>
-
-          <Card className="mt-8">
-            <CardHeader>
-              <CardTitle>Admission Process</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <ol className="list-decimal list-inside space-y-2">
-                {college.admissionProcess.map((step) => (
-                  <li key={step} className="text-gray-600">
-                    {step}
-                  </li>
-                ))}
-              </ol>
-
-              <div className="mt-8 flex gap-4">
-                <Button asChild>
-                  <Link href="/contact">Apply Now</Link>
-                </Button>
-                <Button variant="outline" asChild>
-                  <Link href="/colleges">Back to Colleges</Link>
-                </Button>
-              </div>
             </CardContent>
           </Card>
         </div>
